@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 #include<conio.h>
-int d=0;
 using namespace std;
 class library
 {
@@ -30,10 +29,10 @@ void library::menu()
     cout<<"\n\n\t\t\t====LIBRARY  MANAGEMENT SYSTEM=====";
     cout<<"\n\n\t\t\t=====================================";
     cout<<"\n\n 1.Insert New Record";
-    cout<<"\n\n  2.Search Record";
-    cout<<"\n\n  3.Update Record";
+    cout<<"\n\n 2.Search Record";
+    cout<<"\n\n 3.Update Record";
     cout<<"\n\n 4.Delete Record";
-    cout<<"\n\n  5.Show all Record";
+    cout<<"\n\n 5.Show all Record";
     cout<<"\n\n 6.Exit";
     cout<<"\n\n Enter Your choice  :";
     cin>> choice;
@@ -41,7 +40,6 @@ void library::menu()
     {
     case 1:
       {insert_valo();
-      d++;
       }
         break;
           case 2:
@@ -53,7 +51,6 @@ void library::menu()
           case 4:
             {
                 del();
-              d--;
             }
         break;
           {case 5:
