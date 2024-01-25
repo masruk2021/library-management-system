@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 #include<conio.h>
 using namespace std;
@@ -7,7 +8,7 @@ private:
     struct node
     {
         int id;
-        string name,author,publisher;
+        string name,author,publisher,date;
         node*next_add;
 
     };
@@ -80,6 +81,9 @@ void library::insert_valo()
     cin>>new_node->author;
      cout<<"\n\n Publisher Name : ";
     cin>>new_node->publisher;
+       cout<<"\n\n Date: ";
+    cin>>new_node->date;
+
     new_node->next_add=NULL;
     if(head==NULL)
     {
@@ -122,6 +126,7 @@ int t_id,found=0;
                cout<<"\n\n Book Name : "<<ptr->name;
                cout<<"\n\n Author Name : "<<ptr->author;
                cout<<"\n\n Publisher Name : "<<ptr->publisher;
+                   cout<<"\n\n Publisher Name : "<<ptr->date;
                     found++;
                 }
                 ptr=ptr->next_add;
@@ -165,6 +170,8 @@ int t_id,found=0;
                cin>>ptr->author;
                cout<<"\n\n Publisher Name : ";
                cin>>ptr->publisher;
+                  cout<<"\n\n Date: ";
+               cin>>ptr->date;
                     found++;
                     cout<<"\n\n\t\t Update Book Sucessfully.......";
                 }
@@ -233,7 +240,7 @@ void library::sort()
         menu();
     }
 int t_id;
-string t_name,t_author,t_publisher;
+string t_name,t_author,t_publisher,t_date;
     node*ptr=head;
       while(ptr!=NULL)
       {
@@ -250,15 +257,17 @@ string t_name,t_author,t_publisher;
                   t_name=ptr->name;
                   t_author=ptr->author;
                   t_publisher=ptr->publisher;
+                    t_date=ptr->date;
                   ptr->id=ptr->next_add->id;
                   ptr->name =ptr->next_add->name;
                   ptr->author=ptr->next_add->author;
                   ptr->publisher =ptr->next_add->publisher;
-
+                  ptr->date=ptr->next_add->date;
                   ptr->next_add->id=t_id;
                   ptr->next_add->name =  t_name;
                   ptr->next_add->author= ptr->author;
                   ptr->next_add->publisher = ptr->publisher;
+                   ptr->next_add->date= ptr->date;
               }
               ptr=ptr->next_add;
           }
@@ -278,6 +287,7 @@ string t_name,t_author,t_publisher;
                cout<<"\n\n Book Name : "<<ptr->name;
                cout<<"\n\n Author Name : "<<ptr->author;
                cout<<"\n\n Publisher Name : "<<ptr->publisher;
+                   cout<<"\n\n Date: "<<ptr->date;
                cout<<"\n\n ============================";
 
                 ptr=ptr->next_add;
